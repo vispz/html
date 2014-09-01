@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+
+        <head>
+
+                <title>Academics: Projects</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/styles.css" rel = "stylesheet">
+
+        </head>
+
+        <body>
+
+		<a name="start"></a>
+				<!-----Nav bar--->
+                <div class = "navbar navbar-default navbar-static-top">
+                    <div class = "container">
+
+                            <a href = "index.htm" class = "navbar-brand active">Vishnu's Personal Site</a>
+                            
+                            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+
+                            </button>
+
+                            <div class = "collapse navbar-collapse navHeaderCollapse">
+                                    <ul class = "nav navbar-nav navbar-right">
+                                            <li ><a href =  "index.htm">Home</a></li>
+                                            <li><a href = "resources/Docs/CV.pdf">CV </a></li>
+                                            <li class = "dropdown active">
+
+                                                   
+
+                                                <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">Academics <b class = "caret"></b></a>
+
+                                                <ul class = "dropdown-menu">
+
+                                                        <li><a href = "undergrad.htm">Undergraduate</a></li>
+                                                        <li><a href = "grad.htm">Graduate</a></li>
+                                                        <li><a href = "proj.htm">Projects</a></li>
+
+                                                </ul>
+
+                                           
+
+                                            </li>
+
+                                            <li><a href = "ex.htm">Extra-Curricular</a></li>
+											<li><a href = "links.htm">Links</a></li>
+                                            <li><a href = "cont.htm">Contact</a></li>
+                                    </ul>
+
+                            </div>
+
+                        </div>
+
+                </div><!---navbar end--->
+
+			<!------ML Content----->
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-lg-9">
+						<div class = "panel panel-default">
+							<div class = "panel-body">
+
+								<a name="ml"></a>
+
+								<div class = "page-header">
+
+									<h3>Color segmentation with gaussians <small>Posted on August, 25th, 2014</small></h3>
+
+								</div>
+
+								
+
+								<img class = "featuredImg" src = "resources\Images\project\lir_ims\proj1\proj1.jpg" class = "img-thumbnail" width = "100%">
+
+								
+
+								<p>	<br>
+										The  objective  of  the  project  is  to  use  image 
+										segmentation to detect an object in an image. In 
+										this  project  the  object  was  a  bright  pinkish-red 
+										barrel.  Once  the  object  is  detected  we  had  to 
+										identify the depth at which the barrel is located 
+										using the information from the training images. 
+										<br>
+										<div class = "row">
+											<div class = "col-lg-4">
+												<img class = "featuredImg" src = "resources\Images\project\lir_ims\proj1\im1.jpg" width = "100%">
+											</div>
+											<div class = "col-lg-8">
+												
+													I trained a Gaussian  model  with full covariance 
+													for  each  of  the  color  classes.  Using  the 
+													connected  object  information  I  removed
+													spurious  noise  and  detected  the  depth.  Depth 
+													was detected using the closeness of the detected 
+													major  or  minor  axis  length  to  the  mean  of  the 
+													major or the minor axis length for the barrel of 
+													different depths.
+													<br>
+													The  algorithm  worked  very  well  for  most  of  the 
+													images. The detection  was excellent in most of the 
+													situation but it failed in a few cases where objects 
+													of  similar  colors  are  present  right  next  to  the 
+													image or whenthey had reflections. It was not possible to 
+													eliminate  the  regions  of  unnatural  shape  as  it 
+													would have affected the response to occluded objects. 
+													The  depth  detection  worked  exceedingly  well  in 
+													most cases except a few cases where the chosen 
+													bounding  box  was  wrong  as  the  image  might have 
+													contained similar colored objects right  next  to the
+													barrel.
+													
+											</div>
+										</div>
+								<br>
+								
+												<img class = "featuredImg" src = "resources\Images\project\lir_ims\proj1\im2.jpg" width = "100%">
+											
+								</p>
+								 <div align="center">
+									<a href = "resources\Docs\proj\lir1_report.pdf" class = "btn btn-primary ">Learn more</a>
+								 </div>
+
+								
+								
+								
+							</div>
+						</div>
+					</div>
+						
+				<!-------sidebar begin------->
+				<div class = "col-lg-3">
+		            <div class = "list-group">
+						
+						<a href = "lir_proj.htm" class = "list-group-item active">
+								
+								<img src="resources\Images\project\lir_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								<h4 class = "list-group-item-heading"> &nbsp Learning In Robotics</h4>
+								
+								
+		                </a>
+						
+						<a href = "ai_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\ai_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Intro to AI </h4>
+
+		                </a>
+						
+						<a href = "cs_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cs_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Control Systems</h4>
+
+		                </a>
+						
+
+		                <a href = "cv_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cv_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Computer Vision</h4>
+
+		                </a>
+
+		                <a href = "ml_proj.htm" class = "list-group-item ">
+							<img src="resources\Images\project\ml_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Machine Learning</h4>
+
+		                </a>
+
+		                <a href = "meam520_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\meam520_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Intro to Robotics</h4>
+
+		                </a>
+
+		                <a href = "undergrad_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\ug_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading" > &nbsp  Undergraduate Projects</h4>
+							
+		                </a>
+						
+						<a href = "research_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\research_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading"> &nbsp  Research & Intern </h4>
+							
+		                </a>
+		            </div>
+		        </div>
+				<!-------sidebar end------->
+
+					</div><!-----Sidebar end----->	
+					
+					
+				</div><!---end row>
+				
+			
+				
+			
+			
+			
+			</div><!--------ML Content End------>
+			
+		
+
+			
+		<!----Footer--->
+		<div class = "navbar navbar-default navbar-fixed-bottom">
+				<div class = "container">
+
+						<p class = "navbar-text pull-left">Site Built By Vishnu P S, University of Pennsylvania</p>
+
+						<a href = "#start" class = "navbar-btn btn-success btn pull-right">Back to top</a>
+
+				</div>
+		</div><!----Footer end--->
+
+ 
+
+                <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+                <script src = "js/bootstrap.js"></script>
+
+               
+
+        </body>
+
+</html>
+

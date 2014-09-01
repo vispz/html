@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+        <head>
+
+                <title>Academics: Projects</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/styles.css" rel = "stylesheet">
+
+        </head>
+
+        <body>
+
+		<a name="start"></a>
+				<!-----Nav bar--->
+                <div class = "navbar navbar-default navbar-static-top">
+                    <div class = "container">
+
+                            <a href = "index.htm" class = "navbar-brand active">Vishnu's Personal Site</a>
+                            
+                            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+
+                            </button>
+
+                            <div class = "collapse navbar-collapse navHeaderCollapse">
+                                    <ul class = "nav navbar-nav navbar-right">
+                                            <li ><a href =  "index.htm">Home</a></li>
+                                            <li><a href = "resources/Docs/CV.pdf">CV </a></li>
+                                            <li class = "dropdown active">
+
+                                                   
+
+                                                <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">Academics <b class = "caret"></b></a>
+
+                                                <ul class = "dropdown-menu">
+
+                                                        <li><a href = "undergrad.htm">Undergraduate</a></li>
+                                                        <li><a href = "grad.htm">Graduate</a></li>
+                                                        <li><a href = "proj.htm">Projects</a></li>
+
+                                                </ul>
+
+                                           
+
+                                            </li>
+
+                                            <li><a href = "ex.htm">Extra-Curricular</a></li>
+											<li><a href = "links.htm">Links</a></li>
+                                            <li><a href = "cont.htm">Contact</a></li>
+                                    </ul>
+
+                            </div>
+
+                        </div>
+
+                </div><!---navbar end--->
+
+			<!------ML Content----->
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-lg-9">
+						<div class = "panel panel-default">
+							<div class = "panel-body">
+
+								<a name="ml"></a>
+
+								<div class = "page-header">
+
+									<h3>Imitation Learning for path planning using Learch <small>Posted on August, 25th, 2014</small></h3>
+
+								</div>
+
+								<div style="position: static; left: 10px; top: 10px;"> 
+									<img src="resources\Images\project\lir_ims\proj5\im1.jpg" alt="Generic placeholder thumbnail" class = "img-thumbnail" width = "100%" >
+								</div>
+
+								<br>
+								<h4>Problem Statement</h4>
+								<p>	
+										
+										The objective of the project is to use the aerial map 
+										image from Google maps of the Penn Campus and 
+										to  learn  a  model  for  predicting  the  optimal  path 
+										which  will  be  taken  by  a  car  and  a  pedestrian  by 
+										using  imitation  learning  (a  type  of  reinforcement 
+										learning).  So  in  the  project  a  parameterized  cost 
+										map  is  generated  using  an  exponentiated  sum  of 
+										some  weighted  features.  Then  using  expert 
+										examples  of  optimal  policies  and  employing  the 
+										Learch  Algorithm,  to  get  the  weights  for  the  cost 
+										map that will produce behavior similar to that of the 
+										expert policy.
+										<br>
+										<br>
+										<div class = "row">
+											<div class = "col-lg-6">
+												<img src="resources\Images\project\lir_ims\proj5\im2.jpg" alt="Generic placeholder thumbnail"  class = "img-thumbnail" width = "100%" >
+												<img src="resources\Images\project\lir_ims\proj5\im3.jpg" alt="Generic placeholder thumbnail"  class = "img-thumbnail"  width = "100%" >
+												
+											</div>
+											<div class = "col-lg-6">
+												
+													<h4>Description of approach</h4>
+													A large chunk of this project work was focused on 
+													feature  engineering  and  choosing  a  good  seed  for 
+													the  feature  weights  to  feed  into  the  Learch 
+													algorithm  for  imitation  learning.  Throughout  this 
+													report  I  make  references  to  the  Learch  algorithm 
+													which is based on the paper, "Learning to Search: 
+													Functional  Gradient  Techniques  for  Imitation 
+													Learning"  by  Ratliff  et  al.  First  the  image  was 
+													resized  to  one  eight  the  original  size  and  then  I 
+													extracted a bunch of features for every image pixel. 
+													By looking at the features I did an educated guess 
+													of  the  weights  to  be  used  as  a  seed  to  the  Learch 
+													algorithm  which  works  better  and  faster  when  the 
+													initial cost map is close to the ideal one. Now, I got 
+													a  better  estimate  of  the  weights  using  Learch, 
+													though I found in some cases the initial seed was a 
+													better  estimate  when  the  learning  rate  is  not 
+													properly  set.  In  every  iteration  in  the  Learch 
+													algorithm, I compute the cost map with the recently 
+													computed  weights  which  I  augment  by  adding  a 
+													loss field function which increases the costs at the
+													desired path by a fraction of the maximum value of 
+													the  current  cost  map  (10%).  Then  I  used  dijkstra 
+													search,  to  get  an  optimal  path.  Now  I  take  all  the 
+													points  in  the  optimal  path  and  the  ones  in  the 
+													desired  path  of  all  the  MDP's  perturb  them 
+													randomly upto 3 pixels along x and y. I run a binary 
+													classification between  the features of the points on 
+													the  perturbed  optimal  path  and  the  desired  path 
+													with  a  L2  regularized  Linear  Support  Vector 
+													Machine using Liblinear.    I update the old weights 
+													with  the  weight  obtained  from  the  classification
+													after  scaling  with  an  exponentially  decaying 
+													learning rate. This procedure was done for both the 
+													car and the pedestrian.
+													
+														</div>
+										</div>
+										<br>
+										<div align="center" >
+											<h4>Feature Engineering</h4>
+
+											
+											<img src="resources\Images\project\lir_ims\proj5\f1.jpg" alt="Generic placeholder thumbnail"  >
+											<img src="resources\Images\project\lir_ims\proj5\f2.jpg" alt="Generic placeholder thumbnail"  >
+											<img src="resources\Images\project\lir_ims\proj5\f3.jpg" alt="Generic placeholder thumbnail"  >
+										</div>
+								</p>
+								 <div align="center">
+									<a href = "resources\Docs\proj\lir5_report.pdf" class = "btn btn-primary ">Learn more</a>
+								 </div>
+
+								
+								
+								
+							</div>
+						</div>
+					</div>
+						
+				<!-------sidebar begin------->
+				<div class = "col-lg-3">
+		            <div class = "list-group">
+						
+						<a href = "lir_proj.htm" class = "list-group-item active">
+								
+								<img src="resources\Images\project\lir_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								<h4 class = "list-group-item-heading"> &nbsp Learning In Robotics</h4>
+								
+								
+		                </a>
+						
+						<a href = "ai_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\ai_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Intro to AI </h4>
+
+		                </a>
+						
+						<a href = "cs_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cs_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Control Systems</h4>
+
+		                </a>
+						
+
+		                <a href = "cv_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cv_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Computer Vision</h4>
+
+		                </a>
+
+		                <a href = "ml_proj.htm" class = "list-group-item ">
+							<img src="resources\Images\project\ml_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Machine Learning</h4>
+
+		                </a>
+
+		                <a href = "meam520_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\meam520_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Intro to Robotics</h4>
+
+		                </a>
+
+		                <a href = "undergrad_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\ug_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading" > &nbsp  Undergraduate Projects</h4>
+							
+		                </a>
+						
+						<a href = "research_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\research_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading"> &nbsp  Research & Intern </h4>
+							
+		                </a>
+		            </div>
+		        </div>
+				<!-------sidebar end------->
+
+					</div><!-----Sidebar end----->	
+					
+					
+				</div><!---end row>
+				
+			
+				
+			
+			
+			
+			</div><!--------ML Content End------>
+			
+		
+
+			
+		<!----Footer--->
+		<div class = "navbar navbar-default navbar-fixed-bottom">
+				<div class = "container">
+
+						<p class = "navbar-text pull-left">Site Built By Vishnu P S, University of Pennsylvania</p>
+
+						<a href = "#start" class = "navbar-btn btn-success btn pull-right">Back to top</a>
+
+				</div>
+		</div><!----Footer end--->
+
+ 
+
+                <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+                <script src = "js/bootstrap.js"></script>
+
+               
+
+        </body>
+
+</html>
+

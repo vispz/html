@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+
+        <head>
+
+                <title>Academics: Projects</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/bootstrap.css" rel = "stylesheet">
+                <link href = "css/styles.css" rel = "stylesheet">
+
+        </head>
+
+        <body>
+
+		<a name="start"></a>
+				<!-----Nav bar--->
+                <div class = "navbar navbar-default navbar-static-top">
+                    <div class = "container">
+
+                            <a href = "index.htm" class = "navbar-brand active">Vishnu's Personal Site</a>
+                            
+                            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+
+                            </button>
+
+                            <div class = "collapse navbar-collapse navHeaderCollapse">
+                                    <ul class = "nav navbar-nav navbar-right">
+                                            <li ><a href =  "index.htm">Home</a></li>
+                                            <li><a href = "resources/Docs/CV.pdf">CV </a></li>
+                                            <li class = "dropdown active">
+
+                                                   
+
+                                                <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">Academics <b class = "caret"></b></a>
+
+                                                <ul class = "dropdown-menu">
+
+                                                        <li><a href = "undergrad.htm">Undergraduate</a></li>
+                                                        <li><a href = "grad.htm">Graduate</a></li>
+                                                        <li><a href = "proj.htm">Projects</a></li>
+
+                                                </ul>
+
+                                           
+
+                                            </li>
+
+                                            <li><a href = "ex.htm">Extra-Curricular</a></li>
+											<li><a href = "links.htm">Links</a></li>
+                                            <li><a href = "cont.htm">Contact</a></li>
+                                    </ul>
+
+                            </div>
+
+                        </div>
+
+                </div><!---navbar end--->
+
+			<!------ML Content----->
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-lg-9">
+						<div class = "panel panel-default">
+							<div class = "panel-body">
+
+
+								<div class = "page-header">
+
+									<h3>Hidden Markov Model for Gesture Recognition <small>Posted on August, 25th, 2014</small></h3>
+
+								</div>
+
+								<div style="position: static; left: 10px; top: 10px;"> 
+
+													<img src="resources\Images\project\lir_ims\proj3\prob.jpg" alt="Generic placeholder thumbnail" class = "img-thumbnail" width = "100%" >
+								</div>
+
+								<br>
+								<h4>Problem Statement</h4>
+								<p>	
+										
+										The objective of the project is to use data from the 
+										IMU  of  a  phone  (3  axis  gyroscope  and  3  axis 
+										accelerometer) and predict the gestures performed. 
+										We  have  the  6  following  gestures  wave,  figure  8, 
+										circle, pendulum, hammer and fish. We have to use 
+										Hidden  Markov  Models  (HMM)  to  predict  the 
+										probability  of  each  sequence  of  observation  to 
+										belong to gesture.
+										<br>
+										<br>
+										<div class = "row">
+											<div class = "col-lg-6">
+													<img src="resources\Images\project\lir_ims\proj3\kmeans.jpg" alt="Generic placeholder thumbnail" class = "img-thumbnail" width = "100%" >
+											</div>
+											<div class = "col-lg-6">
+												
+													<h4>Description of approach</h4>
+													By  visually inspecting the variation in the 
+													sensor  values,  I  trimmed  of  the  regions  where  the 
+													sensors are moving randomly before starting  of  the 
+													gestures. I vector quantized the 6 dimensional space 
+													of  accelerometer  and  gyroscope  values  into  20 
+													clusters  using data from all the gestures. Assuming 
+													a  total  of  15  hidden  states,  I  performed  training 
+													using EM or Baum-Welch algorithm to my Hidden 
+													Markov  Model.  I  used  the  recursive  forward 
+													backward  algorithm  to  compute  the  intermediate 
+													values.  In  order  to  account  for  the  numerical 
+													instabilities I used the scaling technique mentioned 
+													in the Lawrence R.  Rabiner's  paper on "A Tutorial 
+													on  Hidden  Markov  Models  and  Selected 
+													Applications  in  Speech  Recognition".  For  the 
+													testing,  I  computed  the  log  probability  of  the 
+													sequence  using  the  Forward  Algorithm.  
+											</div>
+										</div>
+											<br>
+								
+											
+								</p>
+								 <div align="center">
+									<a href = "resources\Docs\proj\lir3_report.pdf" class = "btn btn-primary ">Learn more</a>
+								 </div>
+
+								
+								
+								
+							</div>
+						</div>
+					</div>
+						
+				<!-------sidebar begin------->
+				<div class = "col-lg-3">
+		            <div class = "list-group">
+						
+						<a href = "lir_proj.htm" class = "list-group-item active">
+								
+								<img src="resources\Images\project\lir_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								<h4 class = "list-group-item-heading"> &nbsp Learning In Robotics</h4>
+								
+								
+		                </a>
+						
+						<a href = "ai_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\ai_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Intro to AI </h4>
+
+		                </a>
+						
+						<a href = "cs_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cs_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Control Systems</h4>
+
+		                </a>
+						
+
+		                <a href = "cv_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\cv_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp Computer Vision</h4>
+
+		                </a>
+
+		                <a href = "ml_proj.htm" class = "list-group-item ">
+							<img src="resources\Images\project\ml_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Machine Learning</h4>
+
+		                </a>
+
+		                <a href = "meam520_proj.htm" class = "list-group-item">
+							<img src="resources\Images\project\meam520_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+		                    <h4 class = "list-group-item-heading"> &nbsp  Intro to Robotics</h4>
+
+		                </a>
+
+		                <a href = "undergrad_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\ug_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading" > &nbsp  Undergraduate Projects</h4>
+							
+		                </a>
+						
+						<a href = "research_proj.htm" class = "list-group-item">
+								<img src="resources\Images\project\research_logo.jpg" alt="Generic placeholder thumbnail" style="float:left" width="40" height="32">
+								
+								<h4 class = "list-group-item-heading"> &nbsp  Research & Intern </h4>
+							
+		                </a>
+		            </div>
+		        </div>
+				<!-------sidebar end------->
+
+					</div><!-----Sidebar end----->	
+					
+					
+				</div><!---end row>
+				
+			
+				
+			
+			
+			
+			</div><!--------ML Content End------>
+			
+		
+
+			
+		<!----Footer--->
+		<div class = "navbar navbar-default navbar-fixed-bottom">
+				<div class = "container">
+
+						<p class = "navbar-text pull-left">Site Built By Vishnu P S, University of Pennsylvania</p>
+
+						<a href = "#start" class = "navbar-btn btn-success btn pull-right">Back to top</a>
+
+				</div>
+		</div><!----Footer end--->
+
+ 
+
+                <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+                <script src = "js/bootstrap.js"></script>
+
+               
+
+        </body>
+
+</html>
+
